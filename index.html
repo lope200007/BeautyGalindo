@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Beauty Galindo | Peluquería, barbería y estética</title>
+    <meta name="description" content="Beauty Galindo, by Galindo Peluqueros. Color, cortes, recogidos y tratamientos de estética. Reserva tu cita en el 983 235 736.">
+    <meta name="theme-color" content="#F4ECF7">
+    <meta property="og:title" content="Beauty Galindo · by Galindo Peluqueros">
+    <meta property="og:description" content="Color, cortes, recogidos y tratamientos de estética. Reserva tu cita.">
+    <meta property="og:image" content="logo-beauty.png">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FBF8F7;
+            --lilac: #F2E8F6;
+            --lilac-2: #E6D6EE;
+            --card: #FFFFFF;
+            --text: #2D2A2F;
+            --muted: #7B7380;
+            --accent: #8A6894;
+            --line: #EAE2EC;
+            --serif: 'Cormorant Garamond', Georgia, serif;
+            --sans: 'Jost', system-ui, sans-serif;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+        body { background: var(--bg); color: var(--text); font-family: var(--sans); font-weight: 400; font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; -webkit-tap-highlight-color: transparent; }
+        a { color: inherit; text-decoration: none; }
+        .wrap { max-width: 520px; margin: 0 auto; padding: 0 20px; }
+
+        /* Portada */
+        .hero { background: linear-gradient(180deg, var(--lilac) 0%, var(--bg) 100%); padding: 44px 0 36px; text-align: center; position: relative; overflow: hidden; }
+        .hero::before, .hero::after { content: ""; position: absolute; border-radius: 50%; border: 1px solid var(--lilac-2); pointer-events: none; }
+        .hero::before { width: 420px; height: 420px; left: -210px; top: -140px; }
+        .hero::after { width: 300px; height: 300px; right: -150px; top: 60px; }
+        .logo { width: 150px; height: 150px; margin: 0 auto 22px; border-radius: 50%; box-shadow: 0 14px 40px -12px rgba(138,104,148,0.35); position: relative; }
+        .logo img { width: 100%; height: 100%; display: block; }
+        .eyebrow { font-size: 12px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--accent); }
+        .hero h1 { font-family: var(--serif); font-weight: 400; font-size: 46px; line-height: 1.05; margin: 10px 0 6px; letter-spacing: -0.01em; }
+        .hero h1 em { font-style: italic; color: var(--accent); }
+        .by { font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); }
+        .hero p.lead { color: var(--muted); margin: 18px auto 0; max-width: 360px; font-weight: 300; font-size: 16.5px; }
+
+        /* Botones */
+        .actions { display: grid; gap: 10px; margin-top: 26px; position: relative; }
+        .btn { display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 54px; border-radius: 999px; font-family: var(--sans); font-weight: 500; font-size: 15px; letter-spacing: 0.04em; transition: transform .15s ease, background-color .2s ease; }
+        .btn:active { transform: scale(0.98); }
+        .btn svg { width: 19px; height: 19px; }
+        .btn-main { background: var(--text); color: #fff; }
+        .btn-main:hover { background: #000; }
+        .btn-soft { background: var(--card); color: var(--text); border: 1px solid var(--lilac-2); }
+        .btn-soft:hover { border-color: var(--accent); }
+
+        /* Secciones */
+        section.block { padding: 34px 0 6px; }
+        .sec-title { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+        .sec-title h2 { font-family: var(--serif); font-weight: 500; font-size: 30px; line-height: 1; white-space: nowrap; }
+        .sec-title::after { content: ""; flex: 1; height: 1px; background: var(--lilac-2); }
+        .sec-sub { color: var(--muted); font-size: 14.5px; margin: -6px 0 16px; font-weight: 300; }
+
+        /* Servicios */
+        .list { display: grid; gap: 10px; }
+        .item { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 16px 16px; display: flex; align-items: center; gap: 14px; transition: border-color .2s ease, box-shadow .2s ease; }
+        .item:hover { border-color: var(--lilac-2); box-shadow: 0 10px 28px -16px rgba(138,104,148,0.45); }
+        .item .ic { width: 46px; height: 46px; border-radius: 50%; background: var(--lilac); color: var(--accent); display: grid; place-items: center; flex-shrink: 0; }
+        .item .ic svg { width: 22px; height: 22px; }
+        .item .txt { flex: 1; min-width: 0; }
+        .item h3 { font-family: var(--serif); font-weight: 500; font-size: 22px; line-height: 1.15; }
+        .item p { font-size: 13.5px; color: var(--muted); line-height: 1.45; font-weight: 300; margin-top: 2px; }
+        .item .price { text-align: right; flex-shrink: 0; }
+        .item .price b { font-family: var(--serif); font-weight: 500; font-size: 24px; line-height: 1; display: block; }
+        .item .price span { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); display: block; margin-top: 3px; }
+
+        /* Kérastase */
+        .brand-box { margin-top: 30px; background: var(--text); color: #fff; border-radius: 22px; padding: 26px 22px; text-align: center; position: relative; overflow: hidden; }
+        .brand-box::before { content: ""; position: absolute; width: 260px; height: 260px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.12); right: -90px; top: -110px; }
+        .brand-box small { font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: #CDB6D6; }
+        .brand-box h3 { font-family: var(--serif); font-weight: 400; font-size: 30px; line-height: 1.1; margin: 8px 0 8px; }
+        .brand-box h3 em { color: #E4CFEA; }
+        .brand-box p { font-size: 14.5px; color: rgba(255,255,255,0.75); font-weight: 300; max-width: 340px; margin: 0 auto; }
+
+        /* Equipo */
+        .team { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+        .member { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 18px 8px 16px; text-align: center; }
+        .member .ini { width: 54px; height: 54px; margin: 0 auto 10px; border-radius: 50%; background: var(--lilac); color: var(--accent); display: grid; place-items: center; font-family: var(--serif); font-style: italic; font-size: 26px; }
+        .member b { font-family: var(--serif); font-weight: 500; font-size: 21px; display: block; line-height: 1.1; }
+        .member span { font-size: 11.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+
+        /* Reserva */
+        .book { margin: 34px 0 0; background: var(--lilac); border-radius: 26px; padding: 30px 22px; text-align: center; }
+        .book h2 { font-family: var(--serif); font-weight: 400; font-size: 34px; line-height: 1.05; }
+        .book h2 em { color: var(--accent); }
+        .book p { color: var(--muted); font-weight: 300; margin: 8px 0 0; }
+        .book .phone { font-family: var(--serif); font-size: 30px; margin-top: 10px; display: inline-block; letter-spacing: 0.02em; }
+
+        footer { text-align: center; padding: 30px 0 calc(34px + env(safe-area-inset-bottom)); font-size: 13px; color: var(--muted); font-weight: 300; }
+        footer a { color: var(--accent); }
+        footer .handles { display: flex; justify-content: center; gap: 18px; margin-bottom: 8px; }
+    </style>
+</head>
+<body>
+
+    <!-- Portada -->
+    <header class="hero">
+        <div class="wrap">
+            <div class="logo"><img src="logo-beauty.png" alt="Logo de Beauty Galindo" width="600" height="600"></div>
+            <span class="eyebrow">Peluquería · Barbería · Estética</span>
+            <h1>Beauty <em>Galindo</em></h1>
+            <span class="by">by Galindo Peluqueros</span>
+            <p class="lead">Color, cortes, recogidos y tratamientos de estética. Elige tu servicio y reserva tu cita.</p>
+            <div class="actions">
+                <a class="btn btn-main" href="tel:+34983235736">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    Reservar cita · 983 235 736
+                </a>
+                <a class="btn btn-soft" href="https://ig.me/m/beautygalindo" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".7" fill="currentColor" stroke="none"/></svg>
+                    Escríbenos por Instagram
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="wrap">
+
+        <!-- Peluquería -->
+        <section class="block">
+            <div class="sec-title"><h2>Peluquería</h2></div>
+            <div class="list">
+                <a class="item" href="tel:+34983235736">
+                    <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.12 15.88M14.47 14.48 20 20M8.12 8.12 12 12"/></svg></div>
+                    <div class="txt"><h3>Cortes</h3><p>Corte y peinado a tu medida</p></div>
+                    <div class="price"><b>—</b><span>Consultar</span></div>
+                </a>
+                <a class="item" href="tel:+34983235736">
+                    <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/><path d="M9 15.5a3 3 0 0 0 3 3"/></svg></div>
+                    <div class="txt"><h3>Color</h3><p>Color y cambios de look</p></div>
+                    <div class="price"><b>—</b><span>Consultar</span></div>
+                </a>
+                <a class="item" href="tel:+34983235736">
+                    <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c4 0 7 2.7 7 6.5 0 2.5-1.5 4.2-3.5 5"/><path d="M12 3C8 3 5 5.7 5 9.5c0 2.5 1.5 4.2 3.5 5"/><circle cx="12" cy="17.5" r="3.5"/><path d="M12 14v-4"/></svg></div>
+                    <div class="txt"><h3>Recogidos</h3><p>Para tus ocasiones especiales</p></div>
+                    <div class="price"><b>—</b><span>Consultar</span></div>
+                </a>
+                <a class="item" href="tel:+34983235736">
+                    <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6v3H9z"/><path d="M8 6h8l1 3v10a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V9z"/><path d="M10 13h4"/></svg></div>
+                    <div class="txt"><h3>Tratamientos capilares</h3><p>Cuidado del cabello con Kérastase Premier</p></div>
+                    <div class="price"><b>—</b><span>Consultar</span></div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Estética y barbería -->
+        <section class="block">
+            <div class="sec-title"><h2>Estética y barbería</h2></div>
+            <div class="list">
+                <a class="item" href="tel:+34983235736">
+                    <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 4.6L18.5 9l-4.7 1.4L12 15l-1.8-4.6L5.5 9l4.7-1.4z"/><path d="M18 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"/></svg></div>
+                    <div class="txt"><h3>Tratamientos de estética</h3><p>Cuidado y belleza para ti</p></div>
+                    <div class="price"><b>—</b><span>Consultar</span></div>
+                </a>
+                <a class="item" href="tel:+34983235736">
+                    <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 10.5c-1.6-2-4.2-2.5-6.2-1.4C4.3 9.9 3.4 11.8 2 11.6c.9 2.6 3.5 3.8 6.1 3.3 1.9-.4 3.1-1.5 3.9-2.9.8 1.4 2 2.5 3.9 2.9 2.6.5 5.2-.7 6.1-3.3-1.4.2-2.3-1.7-3.8-2.5-2-1.1-4.6-.6-6.2 1.4z"/></svg></div>
+                    <div class="txt"><h3>Barbería</h3><p>Corte y arreglo de barba</p></div>
+                    <div class="price"><b>—</b><span>Consultar</span></div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Kérastase -->
+        <div class="brand-box">
+            <small>Trabajamos con</small>
+            <h3>Kérastase <em>Premier</em></h3>
+            <p>Cuida tu cabello con la gama Kérastase Premier en Galindo Peluqueros.</p>
+        </div>
+
+        <!-- Equipo -->
+        <section class="block">
+            <div class="sec-title"><h2>Nuestro equipo</h2></div>
+            <div class="team">
+                <div class="member"><div class="ini">S</div><b>Sandra</b><span>Galindo</span></div>
+                <div class="member"><div class="ini">S</div><b>Soraya</b><span>Galindo</span></div>
+                <div class="member"><div class="ini">M</div><b>Mariluz</b><span>Galindo</span></div>
+            </div>
+        </section>
+
+        <!-- Reserva -->
+        <div class="book">
+            <h2>Reserva <em>tu cita</em></h2>
+            <p>Llámanos y te buscamos el hueco que mejor te venga.</p>
+            <a class="phone" href="tel:+34983235736">983 235 736</a>
+            <div class="actions">
+                <a class="btn btn-main" href="tel:+34983235736">Llamar ahora</a>
+                <a class="btn btn-soft" href="https://ig.me/m/beautygalindo" target="_blank" rel="noopener">Escríbenos por Instagram</a>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="wrap">
+            <div class="handles"><a href="https://www.instagram.com/beautygalindo/" target="_blank" rel="noopener">@beautygalindo</a><a href="https://www.instagram.com/galindopeluqueros/" target="_blank" rel="noopener">@galindopeluqueros</a></div>
+            © Beauty Galindo · by Galindo Peluqueros
+        </div>
+    </footer>
+
+</body>
+</html>
